@@ -7,7 +7,7 @@
 - Stop running the program
 
 Tasks:
-[]: Where to store movies
+[x]: Where to store movies
 []: What is the format of a movie
 []: Show the user the main interface and get their input
 []: Allow users to add movies
@@ -15,6 +15,8 @@ Tasks:
 []: Find a movie
 []: Stop running the program when they type 'q'
 """
+
+movies = []
 
 
 def menu():
@@ -33,4 +35,18 @@ def menu():
         user_input = input("Enter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie, and 'q' to quit: ")
 
 
+def add_movie():
+    name = input('Enter the movie name: ')
+    director = input('Enter the movie director: ')
+    year = int(input('Enter the movie release year: '))
+
+    movies.append({
+        'name': name,
+        'director': director,
+        'year': year
+    })
+
+
 menu()
+
+print(movies)
