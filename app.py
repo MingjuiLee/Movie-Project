@@ -8,12 +8,12 @@
 
 Tasks:
 [x]: Where to store movies
-[]: What is the format of a movie
-[]: Show the user the main interface and get their input
-[]: Allow users to add movies
-[]: Show all their movies
+[x]: What is the format of a movie
+[x]: Show the user the main interface and get their input
+[x]: Allow users to add movies
+[x]: Show all their movies
 []: Find a movie
-[]: Stop running the program when they type 'q'
+[x]: Stop running the program when they type 'q'
 """
 
 movies = []
@@ -32,7 +32,7 @@ def menu():
         else:
             print("Unknown command-please try again.")
 
-        user_input = input("Enter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie, and 'q' to quit: ")
+        user_input = input("\nEnter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie, and 'q' to quit: ")
 
 
 def add_movie():
@@ -47,6 +47,17 @@ def add_movie():
     })
 
 
+def show_movies():
+    for movie in movies:
+        show_movie_details(movie)
+
+
+def show_movie_details(movie):
+    print(f"Name: {movie['name']}")
+    print(f"Director: {movie['director']}")
+    print(f"Release year: {movie['year']}")
+
+
 menu()
 
-print(movies)
+
